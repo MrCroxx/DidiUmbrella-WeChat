@@ -1,0 +1,75 @@
+<!--pages/map/map.wxml-->
+<view class='page'>
+  <view class="page__bd page__bd_spacing">
+    <!-- 地图 -->
+    <map id="map4order" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers='{{markers}}' polyline='{{polyline}}' bindregionchange='regionchange' show-location style="width: 100%; height:300px;"></map>
+    <!-- Wifi认证 -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">WiFi认证</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" value='{{currentWifi}}' disabled='true' />
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn" bindtap='setWifiEnvironment'>刷新</view>
+      </view>
+    </view>
+    <!-- 起始位置 -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">起始位置</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='bindFromPositionChange' placeholder="起始位置描述" />
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn" bindtap='markFrom'>标记</view>
+      </view>
+    </view>
+    <!-- 终止位置 -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">终止位置</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='bindToPositionChange' placeholder="终止位置描述" />
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn" bindtap='markTo'>标记</view>
+      </view>
+    </view>
+    <!-- 时间 -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="time" value="{{time}}" bindchange="bindTimeChange">
+          <view class="weui-input">{{time}}</view>
+        </picker>
+      </view>
+    </view>
+    <!-- 联系方式 -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">联系方式</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='bindContactChange' placeholder="在这里填写联系方式!!!" />
+      </view>
+    </view>
+    <!-- 备注 -->
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">备注</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='bindRemarkChange' placeholder="在这里可以填写备注" />
+      </view>
+    </view>
+  </view>
+  <view class='page__ft'>
+    <button class="weui-btn" type="primary" plain='true' bindtap='makeOrder' disabled='{{!canOrder}}'>现在拼伞</button>
+  </view>
+</view>

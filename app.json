@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/neworder/neworder",
+    "pages/runningorder/runningorder",
+    "pages/takeorder/takeorder",
+    "pages/historyorder/historyorder",
+    "pages/hg/hg"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

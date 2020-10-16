@@ -1,0 +1,79 @@
+<!--pages/runningorder/runningorder.wxml-->
+<view class='page'>
+  <view class='page__bd'>
+    <map id="map4running" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers='{{markers}}' polyline='{{polyline}}' show-location style="width: 100%; height:200px;"></map>
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">订单编号</view>
+          <view class="weui-form-preview__value_in-hd">#{{order.id}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">状态</view>
+          <view class="weui-form-preview__value_in-hd">{{order.status}}</view>
+        </view>
+
+
+
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">下单用户
+            <icon wx:if="{{order.from_wifi==null}}" type="circle" size="20"></icon>
+            <icon wx:elif="{{order.from_wifi=='未认证'}}" type="warn" size="20"></icon>
+            <icon wx:else type="success" size="20"></icon>
+            <text>{{order.from_wifi}}</text>
+          </view>
+
+          <view class="weui-form-preview__value">{{order.from_nickname}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">联系方式</view>
+          <view class="weui-form-preview__value">{{order.from_contact}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">接单用户
+            <icon wx:if="{{order.to_wifi==null}}" type="circle" size="20"></icon>
+            <icon wx:elif="{{order.to_wifi=='未认证'}}" type="warn" size="20"></icon>
+            <icon wx:else type="success" size="20"></icon>
+            <text>{{order.to_wifi}}</text>
+          </view>
+          <view class="weui-form-preview__value">{{order.to_nickname}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">联系方式</view>
+          <view class="weui-form-preview__value">{{order.to_contact}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">日期/时间</view>
+          <view class="weui-form-preview__value">{{order.event_time}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">起点</view>
+          <view class="weui-form-preview__value">{{order.from_position}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">终点</view>
+          <view class="weui-form-preview__value">{{order.to_position}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">备注</view>
+          <view class="weui-form-preview__value">{{order.remark}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">下单时间</view>
+          <view class="weui-form-preview__value">{{order.create_time}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">接单时间</view>
+          <view class="weui-form-preview__value">{{order.solve_time}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <button wx:if="{{order.status=='WAITING'}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap='cancel'>取消订单</button>
+        <button wx:elif="{{order.status=='RUNNING'&&order.from_nickname==userInfo.nickName}}" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap='finish'>完成订单</button>
+        <button wx:else class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap='back'>返回</button>
+      </view>
+    </view>
+  </view>
+</view>

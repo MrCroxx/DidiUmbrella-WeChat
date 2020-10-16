@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="page">
+  <view class='logo-view'>
+    <image class='logo' src='/static/icon/logo.png '></image>
+    <text class='logo-name'>航概拼伞</text>
+  </view>
+  <view class='service-view'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-btn" type="primary" plain="true"> 授权使用 </button>
+    <block wx:else>
+      <view class='weui-flex'>
+        <view class='img-button' bindtap='toOrder'>
+          <image class='button-icon' src='/static/icon/order.png'></image>
+          <text class='button-text'>我要拼伞</text>
+        </view>
+
+        <view class='img-button' bindtap='toTake'>
+          <image class='button-icon' src='/static/icon/take.png'></image>
+          <text class='button-text'>我要接人</text>
+        </view>
+      </view>
+
+      <view class='weui-flex'>
+        <view class='img-button' bindtap='toHistory'>
+          <image class='button-icon' src='/static/icon/history.png'></image>
+          <text class='button-text'>订单历史</text>
+        </view>
+        <view class='img-button' bindtap='toHG'>
+          <image class='button-icon' src='/static/icon/hg.png'></image>
+          <text class='button-text'>关于航概</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="weui-footer">
+    <view class="weui-footer__text">Copyright © 2018 航概</view>
+  </view>
+
+</view>

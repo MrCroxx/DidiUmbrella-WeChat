@@ -1,0 +1,4 @@
+/* pages/historyorder/historyorder.wxss */
+.yscroll{
+  height: 600rpx;
+}

@@ -1,0 +1,35 @@
+/* pages/hg/hg.wxss */
+.view-qrcode{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrcode{
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.view-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx; 
+}
+
+.slogan{
+  font-size: 32rpx;
+  color: gray;
+  margin-bottom: 20rpx;
+}
+
+.brief{
+  font-size: 24rpx;
+  color: gray;
+  margin: 10rpx;
+}

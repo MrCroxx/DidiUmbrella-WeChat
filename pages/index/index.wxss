@@ -1,0 +1,49 @@
+/**index.wxss**/
+.logo-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx;
+}
+
+.logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.logo-name {
+  color: #70bfea;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+
+.button-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx;
+}
+
+.button-text{
+  color: #f9b5a0;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.img-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: orange;
+  border-style: solid;
+  border-width: medium;
+  margin: 10rpx;
+  border-radius: 10%;
+}

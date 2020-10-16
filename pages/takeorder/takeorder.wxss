@@ -1,0 +1,6 @@
+/* pages/takeorder/takeorder.wxss */
+
+.img-text{
+  font-size: 30rpx;
+  color: gray;
+}

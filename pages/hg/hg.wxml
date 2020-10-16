@@ -1,0 +1,23 @@
+<!--pages/hg/hg.wxml-->
+<view class='page'>
+
+  <view class='view-qrcode'>
+    <image class='qrcode' src='/static/icon/qrcode.png' bindtap='previewQRCode'></image>
+    <text class='hint'>点击二维码后长按可保存</text>
+  </view>
+
+  <view class='view-logo'>
+    <view>
+      <image class='logo' src='/static/icon/hg.png'></image>
+      <image class='logo' src='/static/icon/logo.png'></image>
+    </view>
+    <text class='slogan'>航概 —— 与ta的每一次相遇</text>
+    <text class='brief'>每年大概有3000人来到北航</text>
+    <text class='brief'>如果一天与30人擦肩而过</text>
+    <text class='brief'>那么遇见"ta"大概需要100天</text>
+    <text class='brief'>遇见就已是概率极小的事件</text>
+    <text class='brief'>一念之差 彼此错过</text>
+    <text class='brief'>都会觉得这是个令人伤感的故事啊</text>
+  </view>
+
+</view>
